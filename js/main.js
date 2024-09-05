@@ -10,12 +10,9 @@
         }, 1);
     };
     spinner(0);
-    
-    
     // Initiate the wowjs
     new WOW().init();
-
-
+    
     // Sticky Navbar
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
@@ -65,8 +62,6 @@
         delay: 5,
         time: 2000
     });
-
-
    // Back to top button
    $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
