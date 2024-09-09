@@ -24,8 +24,6 @@
         <link href="lib/animate/animate.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-
         <!-- Customized Bootstrap Stylesheet -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -44,25 +42,67 @@
         <!-- Spinner End -->
 
         <!-- Navbar & Hero Start -->
-        <div class="container-fluid sticky-top px-0">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-light py-3 px-4">
-                <a href="index.html" class="navbar-brand p-0">
-                    <!-- <h1 class="text-secondary display-6"><i class="fas fa-city text-primary me-3"></i>Nesam Bricks</h1> -->
-                    <img class="img-fluid" src="img/logo/nesam logo1.png" alt="Logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto pt-2 pt-lg-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Gallery</a>                        
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+    <!-- Navbar Code -->
+    <div class="container-fluid sticky-top px-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light py-3 px-4">
+            <a href="index.html" class="navbar-brand p-0">
+                <img class="img-fluid" src="img/logo/nesam logo1.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#navbarMenu">
+                <span class="fa fa-bars"></span>
+            </button>
+    
+            <!-- Navigation Links for Large Screens -->
+            <div class="collapse navbar-collapse d-none d-lg-flex">
+                <div class="navbar-nav ms-auto">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Gallery</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+    
+            <!-- Popup Menu Modal for Mobile Screens -->
+            <div class="modal fade" id="navbarMenu" tabindex="-1" aria-labelledby="navbarMenuLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="navbar-nav ms-auto pt-2 pt-lg-0 text-center">
+                                <a href="index.html" class="nav-item nav-link active">Home</a>
+                                <a href="about.html" class="nav-item nav-link">About</a>
+                                <a href="service.html" class="nav-item nav-link">Gallery</a>
+                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
+    </div>
+    
+    <!-- Styles to control modal behavior based on screen size -->
+    <style>
+        /* Ensure modal only shows in mobile view */
+        @media (min-width: 992px) {
+            #navbarMenu .modal-dialog {
+                display: none; /* Hide modal on large screens */
+            }
+        }
+    
+        /* For mobile view, make the modal float at the top */
+        @media (max-width: 991px) {
+            #navbarMenu .modal-dialog {
+                top: 10px; /* Floating closer to the top */
+                max-width: 90%; /* Smaller modal width */
+            }
+        }
+    </style>
+    
+<!-- Add the necessary Bootstrap JS and CSS -->
+
         <!-- Navbar & Hero End -->
         <!-- Carousel Start -->
         <div class="container-fluid overflow-hidden px-0" >
@@ -334,7 +374,7 @@
             <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.6s">
                 <div class="blog-item h-100">
                     <div class="blog-img">
-                        <img src="img/slideew3.png" class="img-fluid w-100" alt="Future of Brick Industry">
+                        <img src="img/s.png" class="img-fluid w-100" alt="Future of Brick Industry">
                     </div>
                     <div class="blog-content p-4">
                        
@@ -531,6 +571,9 @@ function topFunction() {
 
         </script>
     <!-- JavaScript Libraries -->
+       <!-- Bootstrap JS (Ensure you include this for functionality) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>

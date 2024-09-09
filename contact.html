@@ -56,23 +56,60 @@
           <div class="container-fluid sticky-top px-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-light py-3 px-4">
                 <a href="index.html" class="navbar-brand p-0">
-                    <!-- <h1 class="text-secondary display-6"><i class="fas fa-city text-primary me-3"></i>Nesam Bricks</h1> -->
                     <img class="img-fluid" src="img/logo/nesam logo1.png" alt="Logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#navbarMenu">
                     <span class="fa fa-bars"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto pt-2 pt-lg-0">
+        
+                <!-- Navigation Links for Large Screens -->
+                <div class="collapse navbar-collapse d-none d-lg-flex">
+                    <div class="navbar-nav ms-auto">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Gallery</a>                        
+                        <a href="service.html" class="nav-item nav-link">Gallery</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
-                   
+                </div>
+        
+                <!-- Popup Menu Modal for Mobile Screens -->
+                <div class="modal fade" id="navbarMenu" tabindex="-1" aria-labelledby="navbarMenuLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="navbar-nav ms-auto pt-2 pt-lg-0 text-center">
+                                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                                    <a href="about.html" class="nav-item nav-link">About</a>
+                                    <a href="service.html" class="nav-item nav-link">Gallery</a>
+                                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </nav>
         </div>
+        
+        <!-- Styles to control modal behavior based on screen size -->
+        <style>
+            /* Ensure modal only shows in mobile view */
+            @media (min-width: 992px) {
+                #navbarMenu .modal-dialog {
+                    display: none; /* Hide modal on large screens */
+                }
+            }
+        
+            /* For mobile view, make the modal float at the top */
+            @media (max-width: 991px) {
+                #navbarMenu .modal-dialog {
+                    top: 10px; /* Floating closer to the top */
+                    max-width: 90%; /* Smaller modal width */
+                }
+            }
+        </style>
         <!-- Navbar & Hero End -->
         <!-- Modal Search Start -->
         <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
